@@ -22,7 +22,15 @@ white = Color(0xffffff, 1.0)
 thinline = LineStyle(1, black)
 
 rectangle = RectangleAsset(50, 50, thinline, black)
-Sprite(rectangle, ())
+a=100
+b=150
+Sprite(rectangle, (a,90))
+Sprite(rectangle, (a+b,90))
+
+
+
+myapp = App()
+myapp.run()
 
 
 """
@@ -53,6 +61,5 @@ Sprite(ellipse, (100, 400))
 
 """
 
-myapp = App()
-myapp.run()
+
 
