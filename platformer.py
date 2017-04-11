@@ -27,21 +27,21 @@ b=150
 Sprite(rectangle, (a,90))
 Sprite(rectangle, (a+b,90))
 
- def __init__(self, hwevent):
-        """
-        The event is initialized by the system, with a `hwevent` input parameter.
-        """
-        super().__init__(hwevent)
-        self.wheelDelta = 0
-        """Integer representing up/down motion of the scroll wheel."""
-        if self.type == self.mousewheel:
-            self.wheelDelta = hwevent.deltaY
-        else:
-            self.wheelDelta = 0
-        self.x = hwevent.clientX
-        """The window x-coordinate of the mouse pointer when the event occurred."""
-        self.y = hwevent.clientY
-        """The window y-coordinate of the mouse pointer when the event occurred."""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 myapp = App()
 myapp.run()
