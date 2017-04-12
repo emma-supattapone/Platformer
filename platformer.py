@@ -22,6 +22,11 @@ white = Color(0xffffff, 1.0)
 
 thinline = LineStyle(1, black)
 
+class block(Sprite):
+    asset=RectangleAsset(50, 50, thinline, black)
+    def __init__(self, position):
+        super(). __init__(block.asset, position)
+
 rectangle = RectangleAsset(50, 50, thinline, black)
 a=100
 b=150
@@ -30,10 +35,10 @@ Sprite(rectangle, (a+b,90))
 
 
 def mouseClick(event):
-    Sprite(rectangle, (event.x, event.y))
+    block((event.x - 25, event.y - 25))
     rectangle.y = event.y
     
-h = myapp.listenMouseEvent('click', int(mouseClick))
+h = myapp.listenMouseEvent('click', mouseClick)
 
 print(h)
 
