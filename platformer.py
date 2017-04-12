@@ -30,10 +30,10 @@ Sprite(rectangle, (a+b,90))
 
 
 def mouseClick(event):
-    rectangle.x = event.x
+    Sprite(rectangle, (event.x, event.y))
     rectangle.y = event.y
     
-h = myapp.listenMouseEvent('click', mouseClick)
+h = myapp.listenMouseEvent('click', int(mouseClick))
 
 print(h)
 
