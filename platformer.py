@@ -20,7 +20,9 @@ blue = Color(0x0000ff, 1.0)
 black = Color(0x000000, 1.0)
 white = Color(0xffffff, 1.0)
 orange = Color(0xffa500,1.0)
+purple = Color(0xa020f0,1.0)
 thinline = LineStyle(1, black)
+notthinline = LineStyle(3, green)
 
 
 class block(Sprite):
@@ -50,36 +52,14 @@ Sprite(rectangelo, (100,200))
 circelo = CircleAsset(10, thinline, orange)
 Sprite(circelo, (107.5, 204))
 
-
+rectangelot = RectangleAsset(15,30, thinline, purple)
 
 myapp = App()
 myapp.run()
 
-"""
 
-rectangle = RectangleAsset()
-
-
-rectangle3 = RectangleAsset(200, 210, thinline, blue)
-rectangle4 = RectangleAsset(20, 800, thinline, red)
-
-circle2 = CircleAsset(10, thinline, white)
-polygon = PolygonAsset([(200, 130) , (220, 180) , (270, 180) , (225, 215) , (245, 260) , (200, 240) , (155, 260) , (175, 215) , (130, 180) ,  (180, 180) , (200, 130)], thinline, white)
-ellipse = EllipseAsset(20, 300, thinline, black)
-
-# Creating sprites
-Sprite(rectangle, (300, 100))
-Sprite(rectangle, (300, 170))
-Sprite(rectangle, (300, 240))
-
-Sprite(rectangle2, (100, 380))
-Sprite(rectangle2, (100, 450))
-Sprite(rectangle3,(100,100))
 
 Sprite(circle2, (95, 80))
 Sprite(polygon, (0, 0))
 Sprite(ellipse, (100, 400))
-
-# add your code here /\  /\  /\
-"""
 
