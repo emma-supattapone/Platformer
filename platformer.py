@@ -19,7 +19,7 @@ green = Color(0x00ff00, 1.0)
 blue = Color(0x0000ff, 1.0)
 black = Color(0x000000, 1.0)
 white = Color(0xffffff, 1.0)
-
+orange = Color(0xffa500,1.0)
 thinline = LineStyle(1, black)
 
 
@@ -31,8 +31,8 @@ class block(Sprite):
 rectangle = RectangleAsset(50, 50, thinline, black)
 a=100
 b=150
-Sprite(rectangle, (a,90))
-Sprite(rectangle, (a+b,90))
+#Sprite(rectangle, (a,90))
+#Sprite(rectangle, (a+b,90))
 
 rounding = lambda x: 5 * round(x/5, -1)
 
@@ -45,21 +45,10 @@ print(h)
 
 
 
-
-
-
-
-
-
-circle = CircleAsset(20, thinline, black)
-Sprite(circle, (95, 80))
-
-rectangle2 = RectangleAsset(35, 60, thinline, red)
-
-
-Sprite(rectangle2, (100, 170))
-
-
+rectangelo = RectangleAsset(15,30, thinline, orange)
+Sprite(rectangelo, (100,200))
+circelo = CircleAsset(10, thinline, orange)
+Sprite(circelo, (107.5, 204))
 
 
 
