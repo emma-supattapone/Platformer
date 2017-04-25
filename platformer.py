@@ -46,20 +46,45 @@ h = myapp.listenMouseEvent('click', mouseClick)
 print(h)
 
 
-
 rectangelo = RectangleAsset(15,30, thinline, orange)
 Sprite(rectangelo, (100,200))
 circelo = CircleAsset(10, thinline, orange)
 Sprite(circelo, (107.5, 204))
 
-rectangelot = RectangleAsset(15,30, thinline, purple)
-
+rectangelot = RectangleAsset(15,30, notthinline, purple)
+Sprite(rectangelot, (200, 200))
 myapp = App()
 myapp.run()
 
 
-
-Sprite(circle2, (95, 80))
-Sprite(polygon, (0, 0))
-Sprite(ellipse, (100, 400))
+smol = RectangleAsset(0.1,0.1,thinline, purple)
+#E
+Sprite(smol, (100,100))
+Sprite(smol, (100,101))
+Sprite(smol, (100,102))
+Sprite(smol, (100,103))
+Sprite(smol, (100,104))
+Sprite(smol, (101,100))
+Sprite(smol, (101,102))
+Sprite(smol, (101,104))
+Sprite(smol, (102,100))
+Sprite(smol, (102,104))
+#m1
+Sprite(smol, (104,104))
+Sprite(smol, (106,104))
+Sprite(smol, (108,104))
+Sprite(smol, (104,103))
+Sprite(smol, (106,103))
+Sprite(smol, (108,103))
+Sprite(smol, (105,102))
+Sprite(smol, (107,102))
+#m2
+Sprite(smol, (110,104))
+Sprite(smol, (112,104))
+Sprite(smol, (112,104))
+Sprite(smol, (110,103))
+Sprite(smol, (110,103))
+Sprite(smol, (112,103))
+Sprite(smol, (111,102))
+Sprite(smol, (113,102))
 
