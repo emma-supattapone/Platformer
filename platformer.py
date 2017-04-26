@@ -31,20 +31,16 @@ class block(Sprite):
         super(). __init__(block.asset, position)
 
 rectangle = RectangleAsset(50, 50, thinline, black)
-a=100
-b=150
-#Sprite(rectangle, (a,90))
-#Sprite(rectangle, (a+b,90))
 
 rounding = lambda x: 5 * round(x/5, -1)
 
-def mouseClick(event):
+
+def w(event):
     block((rounding(event.x - 25), rounding(event.y - 25)))
     rectangle.y = event.y
-
-h = myapp.listenMouseEvent('click', mouseClick)
+    
+h = myapp.listenKeyEvent('keydown' , 'w' , w)
 print(h)
-
 
 rectangelo = RectangleAsset(15,30, thinline, orange)
 Sprite(rectangelo, (100,200))
@@ -53,9 +49,103 @@ Sprite(circelo, (107.5, 204))
 
 rectangelot = RectangleAsset(15,30, notthinline, purple)
 Sprite(rectangelot, (200, 200))
+
+
+
+
 myapp = App()
 myapp.run()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""
 
 smol = RectangleAsset(0.1,0.1,thinline, purple)
 #E
@@ -81,10 +171,18 @@ Sprite(smol, (107,102))
 #m2
 Sprite(smol, (110,104))
 Sprite(smol, (112,104))
-Sprite(smol, (112,104))
-Sprite(smol, (110,103))
+Sprite(smol, (114,104))
 Sprite(smol, (110,103))
 Sprite(smol, (112,103))
+Sprite(smol, (114,103))
 Sprite(smol, (111,102))
 Sprite(smol, (113,102))
+#a
+Sprite(smol, (117,102))
+Sprite(smol, (118,102))
+Sprite(smol, (116,103))
+Sprite(smol, (117,104))
+Sprite(smol, (118,103))
+Sprite(smol, (119,104))
 
+"""
