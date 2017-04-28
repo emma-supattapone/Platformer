@@ -9,7 +9,7 @@ https://github.com/HHS-IntroProgramming/Platformer
 
 from ggame import App
 myapp = App()
-myapp.run()
+#myapp.run()
 
 from ggame import App, Color, LineStyle, Sprite
 from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset
@@ -42,6 +42,11 @@ def w(event):
 h = myapp.listenKeyEvent('keydown' , 'w' , w)
 print(h)
 
+def move(even):
+    print(event.x, event.y)
+
+myapp.listenMouseEvent('mousemove', move)
+
 rectangelo = RectangleAsset(15,30, thinline, orange)
 Sprite(rectangelo, (100,200))
 circelo = CircleAsset(10, thinline, orange)
@@ -54,7 +59,6 @@ Sprite(rectangelot, (200, 200))
 
 
 
-myapp = App()
 myapp.run()
 
 
