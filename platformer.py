@@ -23,6 +23,7 @@ orange = Color(0xffa500,1.0)
 purple = Color(0xa020f0,1.0)
 thinline = LineStyle(1, black)
 notthinline = LineStyle(3, green)
+mouseposition = (0, 0)
 
 
 class block(Sprite):
@@ -42,8 +43,10 @@ def w(event):
 h = myapp.listenKeyEvent('keydown' , 'w' , w)
 print(h)
 
-def move(even):
-    print(event.x, event.y)
+def move(event):
+    global mouseposition
+    #print(event.x, event.y)
+    mouseposition = (event.x, event.y)
 
 myapp.listenMouseEvent('mousemove', move)
 
