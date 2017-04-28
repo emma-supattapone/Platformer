@@ -58,8 +58,38 @@ rectangelot = RectangleAsset(15,30, notthinline, purple)
 Sprite(rectangelot, (200, 200))
 
 
+"""
+class block(Sprite):
+    asset=RectangleAsset(15,30, notthinline, purple)
+    def __init__(self, position):
+        super(). __init__(block.asset, position)
+
+rectangelot = RectangleAsset(15,30, notthinline, purple)
+
+rounding = lambda x: 5 * round(x/5, -1)
+
+def p(event):
+    block((rounding(mousepositiono[0] - 25), rounding(mousepositiono[1] - 25)))
+    rectangle.y = mouseposition[1]
+    
+h = myapp.listenKeyEvent('keydown' , 'p' , p)
+print(h)
+
+def moveo(event):
+    global mousepositiono
+    #print(event.x, event.y)
+    mousepositiono = (event.x, event.y)
+
+myapp.listenMouseEvent('mousemove', move)
+
+rectangelo = RectangleAsset(15,30, thinline, orange)
+Sprite(rectangelo, (100,200))
+circelo = CircleAsset(10, thinline, orange)
+Sprite(circelo, (107.5, 204))
 
 
+Sprite(rectangelot, (200, 200))
+"""
 
 myapp.run()
 
