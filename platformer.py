@@ -35,10 +35,9 @@ rectangle = RectangleAsset(50, 50, thinline, black)
 
 rounding = lambda x: 5 * round(x/5, -1)
 
-
 def w(event):
-    block((rounding(event.x - 25), rounding(event.y - 25)))
-    rectangle.y = event.y
+    block((rounding(mouseposition[0] - 25), rounding(mouseposition[1] - 25)))
+    rectangle.y = mouseposition[1]
     
 h = myapp.listenKeyEvent('keydown' , 'w' , w)
 print(h)
