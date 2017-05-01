@@ -76,16 +76,16 @@ rectangelot = RectangleAsset(15,30, notthinline, purple)
 rounding = lambda x: 5 * round(x/5, -1)
 
 def p(event):
-    blocko((rounding(mousepositiono[0] - 25), rounding(mousepositiono[1] - 25)))
+    blocko((rounding(mouseposition[0] - 25), rounding(mouseposition[1] - 25)))
     rectangle.y = mouseposition[1]
     
 ho = myapp.listenKeyEvent('keydown' , 'p' , p)
 print(ho)
 
-def moveo(event):
-    global mousepositiono
+def move(event):
+    global mouseposition
     #print(event.x, event.y)
-    mousepositiono = (event.x, event.y)
+    mouseposition = (event.x, event.y)
 
 myapp.listenMouseEvent('mousemove', move)
 
