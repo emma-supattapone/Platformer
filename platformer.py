@@ -49,17 +49,6 @@ def move(event):
 
 myapp.listenMouseEvent('mousemove', move)
 
-rectangelo = RectangleAsset(15,30, thinline, orange)
-Sprite(rectangelo, (100,200))
-circelo = CircleAsset(10, thinline, orange)
-Sprite(circelo, (107.5, 204))
-
-
-
-
-
-
-
 
 
 
@@ -89,13 +78,36 @@ def move(event):
 
 myapp.listenMouseEvent('mousemove', move)
 
+
+
+
+class blockoo(Sprite):
+    asset=RectangleAsset(15,4, thinline, red)
+    def __init__(self, position):
+        super(). __init__(blockoo.asset, position)
+
+rectangeloot = RectangleAsset(15,4, thinline, red)
+
+def s(event):
+    blockoo(((mouseposition[0]), (mouseposition[1])))
+    rectangle.y = mouseposition[1]
+    
+hoo = myapp.listenKeyEvent('keydown' , 's' , s)
+print(hoo)
+
+def move(event):
+    global mouseposition
+    mouseposition = (event.x, event.y)
+
+myapp.listenMouseEvent('mousemove', move)
+
+
+
+
 rectangelo = RectangleAsset(15,30, thinline, orange)
-Sprite(rectangelo, (100,200))
 circelo = CircleAsset(10, thinline, orange)
-Sprite(circelo, (107.5, 204))
 
 
-Sprite(rectangelot, (200, 200))
 
 
 myapp.run()
