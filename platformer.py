@@ -53,8 +53,6 @@ myapp.listenMouseEvent('mousemove', move)
 
 
 
-
-
 class blocko(Sprite):
     asset=RectangleAsset(15,30, notthinline, purple)
     def __init__(self, position):
@@ -112,16 +110,15 @@ circelo = CircleAsset(10, thinline, orange)
 
 myapp.run()
 
-
-
-
-
-
-
-
-
-
-
+x=100
+y=100
+poly = PolygonAsset([(x+20, y+13) , (x+22, y+18) , (x+27, y+18) , (x+22.5, y+21.5) , (x+24.5, y+26) , (x+20, y+24) , (x+15.5, y+26) , (x+17.5, y+21.5) , (x+13, y+18) ,  (x+18, y+18) , (x+20, y+13)], thinline, blue)
+Sprite(poly)
+x=30
+y=80
+Sprite(poly)
+Sprite(poly)
+Sprite(poly)
 
 """
 
