@@ -25,7 +25,7 @@ thinline = LineStyle(1, black)
 notthinline = LineStyle(3, green)
 mouseposition = (0, 0)
 
-
+#Wall
 class block(Sprite):
     asset=RectangleAsset(50, 50, thinline, black)
     def __init__(self, position):
@@ -52,12 +52,38 @@ myapp.listenMouseEvent('mousemove', move)
 
 
 
-
+#Player
 class blocko(Sprite):
     asset=RectangleAsset(15,30, notthinline, purple)
     def __init__(self, position):
         super(). __init__(blocko.asset, position)
-
+        self.vx = 1
+        self.vy = 1
+        self.vr = 0.01
+        
+def step(self):
+        self.x += self.vx
+        self.y += self.vy
+        self.rotation += self.vr
+def step(self):
+        for x in self.getSpritesbyClass(blocko):
+            x.step()
+        self.we = 0
+        self.wef = 1
+        blocko.listenKeyEvent("keydown", "space", self.weyay)
+        blocko.listenKeyEvent("keyup", "space", self.weno)
+def weyay(self, event):
+        self.we = 1
+def weno(self, event):
+        self.we = 0
+        if self.we == 1:
+            self.setImage(self.wef)
+            self.wef += 1
+            if self.wef == 4:
+                self.wef = 1
+        else:
+            self.setImage(0)
+            
 rectangelot = RectangleAsset(15,30, notthinline, purple)
 
 rounding = lambda x: 5 * round(x/5, -1)
@@ -78,7 +104,7 @@ myapp.listenMouseEvent('mousemove', move)
 
 
 
-
+#Spring
 class blockoo(Sprite):
     asset=RectangleAsset(15,4, thinline, red)
     def __init__(self, position):
