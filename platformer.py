@@ -134,35 +134,6 @@ circelo = CircleAsset(10, thinline, orange)
 
 myapp.run()
 
-x=146
-y=100
-poly = PolygonAsset([(x+20, y+13) , (x+22, y+18) , (x+27, y+18) , (x+22.5, y+21.5) , (x+24.5, y+26) , (x+20, y+24) , (x+15.5, y+26) , (x+17.5, y+21.5) , (x+13, y+18) ,  (x+18, y+18) , (x+20, y+13)], thinline, blue)
-Sprite(poly)
-x=30
-y=80
-Sprite(poly)
-Sprite(poly)
-Sprite(poly)
-
-class blockooo(Sprite):
-    asset=PolygonAsset(15,4, thinline, red)
-    def __init__(self, position):
-        super(). __init__(blockooo.asset, position)
-
-rectangeloot = RectangleAsset(15,4, thinline, red)
-
-def s(event):
-    blockooo(((mouseposition[0]), (mouseposition[1])))
-    rectangle.y = mouseposition[1]
-    
-hoo = myapp.listenKeyEvent('keydown' , 's' , s)
-print(hoo)
-
-def move(event):
-    global mouseposition
-    mouseposition = (event.x, event.y)
-
-myapp.listenMouseEvent('mousemove', move)
 
 """
 
