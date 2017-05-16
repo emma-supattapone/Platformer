@@ -49,66 +49,11 @@ def move(event):
 
 myapp.listenMouseEvent('mousemove', move)
 
-
-
-
-#Player
-class blocko(Sprite):
-    asset=RectangleAsset(15,30, notthinline, purple)
-    def __init__(self, position):
-        super(). __init__(blocko.asset, position)
-        self.vx = 1
-        self.vy = 1
-        
-def step(self):
-        self.x += self.vx
-        self.y += self.vy
-def step(self):
-        for moo in self.getSpritesbyClass(blocko):
-            moo.step()
-        self.we = 0
-        self.wef = 1
-        blocko.listenKeyEvent("keydown", "up arrow", self.weyay)
-        blocko.listenKeyEvent("keyup", "up arrow", self.weno)
-def weyay(self, event):
-        self.we = 1
-def weno(self, event):
-        self.we = 0
-        if self.we == 1:
-            self.setImage(self.wef)
-            self.wef += 1
-            if self.wef == 4:
-                self.wef = 1
-        else:
-            self.setImage(0)
-            
-rectangelot = RectangleAsset(15,30, notthinline, purple)
-
-rounding = lambda x: 5 * round(x/5, -1)
-
-def p(event):
-    blocko((rounding(mouseposition[0] - 25), rounding(mouseposition[1] - 25)))
-    rectangle.y = mouseposition[1]
-    
-ho = myapp.listenKeyEvent('keydown' , 'p' , p)
-print(ho)
-
-def move(event):
-    global mouseposition
-    #print(event.x, event.y)
-    mouseposition = (event.x, event.y)
-
-myapp.listenMouseEvent('mousemove', move)
-
-
-
 #Spring
 class blockoo(Sprite):
     asset=RectangleAsset(15,4, thinline, red)
     def __init__(self, position):
         super(). __init__(blockoo.asset, position)
-
-rectangeloot = RectangleAsset(15,4, thinline, red)
 
 def s(event):
     blockoo(((mouseposition[0]), (mouseposition[1])))
@@ -125,15 +70,50 @@ myapp.listenMouseEvent('mousemove', move)
 
 
 
+#Player
+class blocko(Sprite):
+    asset=RectangleAsset(15,30, notthinline, purple)
+    def __init__(self, position):
+        super(). __init__(blocko.asset, position)
+        self.vx = 1
+        self.vy = 1
 
-rectangelo = RectangleAsset(15,30, thinline, orange)
-circelo = CircleAsset(10, thinline, orange)
+def step():
+    print("moo")
+    if blk.go:
+        blk.x += 1
+def p(event):
+    
+    blk=blocko(((mouseposition[0]), (mouseposition[1])))
+    rectangle.y = mouseposition[1]
+    blk.go=True        
+
+            
+rectangelot = RectangleAsset(15,30, notthinline, purple)
+
+
+    
+ho = myapp.listenKeyEvent('keydown' , 'p' , p)
+print(ho)
+
+def move(event):
+    global mouseposition
+    #print(event.x, event.y)
+    mouseposition = (event.x, event.y)
+
+myapp.listenMouseEvent('mousemove', move)
 
 
 
 
-myapp.run()
 
+
+
+
+
+
+
+myapp.run(step)
 
 """
 
