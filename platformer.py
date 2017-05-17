@@ -11,8 +11,11 @@ from ggame import App
 myapp = App()
 #myapp.run()
 
-from ggame import App, Color, LineStyle, Sprite
+SCREEN_WIDTH = 600
+SCREEN_HEIGHT = 400
+from ggame import App, Color, LineStyle, Sprite, Frame
 from ggame import RectangleAsset, CircleAsset, EllipseAsset, PolygonAsset
+
 
 red = Color(0xff0000, 1.0)
 green = Color(0x00ff00, 1.0)
@@ -34,20 +37,18 @@ class block(Sprite):
 rectangle = RectangleAsset(50, 50, thinline, black)
 
 rounding = lambda x: 5 * round(x/5, -1)
+e = []
 
 def w(event):
     block((rounding(mouseposition[0] - 25), rounding(mouseposition[1] - 25)))
     rectangle.y = mouseposition[1]
-    
-h = myapp.listenKeyEvent('keydown' , 'w' , w)
-print(h)
+    e.append((rounding(mouseposition[0] - 25), rounding(mouseposition[1] - 25)))
 
 def move(event):
     global mouseposition
     #print(event.x, event.y)
     mouseposition = (event.x, event.y)
 
-myapp.listenMouseEvent('mousemove', move)
 
 #Spring
 class blockoo(Sprite):
@@ -59,14 +60,13 @@ def s(event):
     blockoo(((mouseposition[0]), (mouseposition[1])))
     rectangle.y = mouseposition[1]
     
-hoo = myapp.listenKeyEvent('keydown' , 's' , s)
-print(hoo)
+
 
 def move(event):
     global mouseposition
     mouseposition = (event.x, event.y)
 
-myapp.listenMouseEvent('mousemove', move)
+
 
 
 
@@ -78,30 +78,34 @@ class blocko(Sprite):
         self.vx = 1
         self.vy = 1
 
-def step():
-    print("moo")
-    if blk.go:
-        blk.x += 1
 def p(event):
-    
-    blk=blocko(((mouseposition[0]), (mouseposition[1])))
-    rectangle.y = mouseposition[1]
-    blk.go=True        
-
-            
+    player.x=(mouseposition[0])
+    player.y=(mouseposition[1])
+player = blocko((4000,1))
+player.go = True
 rectangelot = RectangleAsset(15,30, notthinline, purple)
 
-
-    
-ho = myapp.listenKeyEvent('keydown' , 'p' , p)
-print(ho)
 
 def move(event):
     global mouseposition
     #print(event.x, event.y)
     mouseposition = (event.x, event.y)
 
+global t
+t=0
+def step():
+    global t
+    
+    if player.go:
+        if myapp.listenKeyEvent('keydown' , 'w' , w):
+            t=0
+        t=t+1
+        player.y = player.y + 0.1 * t
+    
+myapp.listenKeyEvent('keydown' , 'w' , w)
 myapp.listenMouseEvent('mousemove', move)
+myapp.listenKeyEvent('keydown' , 'p' , p)
+myapp.listenKeyEvent('keydown' , 's' , s)
 
 
 
@@ -109,11 +113,9 @@ myapp.listenMouseEvent('mousemove', move)
 
 
 
-
-
-
-
+myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
 myapp.run(step)
+#myapp.run()
 
 """
 
