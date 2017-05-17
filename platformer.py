@@ -91,16 +91,17 @@ def move(event):
     #print(event.x, event.y)
     mouseposition = (event.x, event.y)
 
+def step():
+    if player.go:
+        player.x = player.x - 1
+
 global t
 t=0
 def step():
     global t
-    
     if player.go:
-        if myapp.listenKeyEvent('keydown' , 'w' , w):
-            t=0
         t=t+1
-        player.y = player.y + 0.1 * t
+        player.y = player.y + 0.2 * t
     
 myapp.listenKeyEvent('keydown' , 'w' , w)
 myapp.listenMouseEvent('mousemove', move)
