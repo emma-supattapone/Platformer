@@ -28,6 +28,8 @@ thinline = LineStyle(1, black)
 notthinline = LineStyle(3, green)
 mouseposition = (0, 0)
 
+
+
 #Wall
 class block(Sprite):
     asset=RectangleAsset(50, 50, thinline, black)
@@ -40,13 +42,14 @@ rounding = lambda x: 5 * round(x/5, -1)
 e = []
 
 def w(event):
-    block((rounding(mouseposition[0] - 25), rounding(mouseposition[1] - 25)))
+    e.append(block((rounding(mouseposition[0] - 25), rounding(mouseposition[1] - 25))))
     rectangle.y = mouseposition[1]
-    e.append((rounding(mouseposition[0] - 25), rounding(mouseposition[1] - 25)))
+    print(e)
+
 
 def move(event):
     global mouseposition
-    #print(event.x, event.y)
+#    print(event.x, event.y)
     mouseposition = (event.x, event.y)
 
 
@@ -81,6 +84,8 @@ class blocko(Sprite):
 def p(event):
     player.x=(mouseposition[0])
     player.y=(mouseposition[1])
+#    print(mouseposition[0], mouseposition[1])
+    t=0
 player = blocko((4000,1))
 player.go = True
 rectangelot = RectangleAsset(15,30, notthinline, purple)
@@ -88,20 +93,33 @@ rectangelot = RectangleAsset(15,30, notthinline, purple)
 
 def move(event):
     global mouseposition
-    #print(event.x, event.y)
+#    print(event.x, event.y)
     mouseposition = (event.x, event.y)
 
 def step():
     if player.go:
         player.x = player.x - 1
 
+def collidingWithSprites(blocko, block):
+    if blocko is block:
+        return False
+    elif blocko._collisionStyle == block._collisionStyle == type(blocko)._circCollision:
+        dist2 = (blocko.x - block.x)**2 + (blocko.y - block.y)**2
+        return dist2 < (blocko.radius + block.radius)**2
+    else:
+        return (not (blocko.xmin > block.xmax
+            or blocko.xmax < block.xmin
+            or blocko.ymin > block.ymax
+            or blocko.ymax < block.ymin))
+    
+
 global t
 t=0
 def step():
     global t
     if player.go:
-        t=t+1
-        player.y = player.y + 0.2 * t
+        t=t+0.05
+        player.y = player.y + 3 * t
     
 myapp.listenKeyEvent('keydown' , 'w' , w)
 myapp.listenMouseEvent('mousemove', move)
