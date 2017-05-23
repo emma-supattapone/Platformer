@@ -118,7 +118,7 @@ def step():
     if player.go:
         cc = player.collidingWithSprites(block)
         if len(cc) > 0:
-            print("player is colliding with something!")
+            player.y -= 5
         else:
             t=t+0.05
             player.y = player.y + 3 * t
