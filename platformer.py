@@ -99,17 +99,19 @@ def move(event):
 
 def collidingWithSprites(blocko, block):
     if blocko is block:
-        print("pancakes")
         return False
     elif blocko._collisionStyle == block._collisionStyle == type(blocko)._circCollision:
         dist2 = (blocko.x - block.x)**2 + (blocko.y - block.y)**2
-        return dist2 < (25 + 25)**2
+        return dist2 < (25 + 20)**2
     else:
         return (not (blocko.xmin > block.xmax
             or blocko.xmax < block.xmin
             or blocko.ymin > block.ymax
             or blocko.ymax < block.ymin))
     
+class KeyEvent(_Event):
+
+def     
 
 global t
 t=0
@@ -118,7 +120,7 @@ def step():
     if player.go:
         cc = player.collidingWithSprites(block)
         if len(cc) > 0:
-            player.y -= 5
+            print("pancakes")
         else:
             t=t+0.05
             player.y = player.y + 3 * t
@@ -127,6 +129,9 @@ myapp.listenKeyEvent('keydown' , 'w' , w)
 myapp.listenMouseEvent('mousemove', move)
 myapp.listenKeyEvent('keydown' , 'p' , p)
 myapp.listenKeyEvent('keydown' , 's' , s)
+myapp.listenKeyEvent('keydown' , 'up arrow' , mup)
+myapp.listenKeyEvent('keydown' , 'right arrow' , might)
+myapp.listenKeyEvent('keydown' , 'left arrow' , meft)
 
 
 
