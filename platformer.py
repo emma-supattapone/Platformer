@@ -102,6 +102,7 @@ def step():
 
 def collidingWithSprites(blocko, block):
     if blocko is block:
+        print("pancakes")
         return False
     elif blocko._collisionStyle == block._collisionStyle == type(blocko)._circCollision:
         dist2 = (blocko.x - block.x)**2 + (blocko.y - block.y)**2
