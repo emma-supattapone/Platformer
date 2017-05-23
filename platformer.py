@@ -119,8 +119,9 @@ def step():
         cc = player.collidingWithSprites(block)
         if len(cc) > 0:
             print("player is colliding with something!")
-        t=t+0.05
-        player.y = player.y + 3 * t
+        else:
+            t=t+0.05
+            player.y = player.y + 3 * t
     
 myapp.listenKeyEvent('keydown' , 'w' , w)
 myapp.listenMouseEvent('mousemove', move)
