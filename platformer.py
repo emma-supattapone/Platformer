@@ -44,7 +44,7 @@ e = []
 def w(event):
     e.append(block((rounding(mouseposition[0] - 25), rounding(mouseposition[1] - 25))))
     rectangle.y = mouseposition[1]
-    print(e)
+#    print(e)
 
 
 def move(event):
@@ -96,9 +96,6 @@ def move(event):
 #    print(event.x, event.y)
     mouseposition = (event.x, event.y)
 
-def step():
-    if player.go:
-        player.x = player.x - 1
 
 def collidingWithSprites(blocko, block):
     if blocko is block:
@@ -106,7 +103,7 @@ def collidingWithSprites(blocko, block):
         return False
     elif blocko._collisionStyle == block._collisionStyle == type(blocko)._circCollision:
         dist2 = (blocko.x - block.x)**2 + (blocko.y - block.y)**2
-        return dist2 < (blocko.radius + block.radius)**2
+        return dist2 < (25 + 25)**2
     else:
         return (not (blocko.xmin > block.xmax
             or blocko.xmax < block.xmin
@@ -119,6 +116,9 @@ t=0
 def step():
     global t
     if player.go:
+        cc = player.collidingWithSprites(block)
+        if len(cc) > 0:
+            print("player is colliding with something!")
         t=t+0.05
         player.y = player.y + 3 * t
     
@@ -133,7 +133,7 @@ myapp.listenKeyEvent('keydown' , 's' , s)
 
 
 
-myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
+#myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
 myapp.run(step)
 #myapp.run()
 
