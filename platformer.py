@@ -96,7 +96,7 @@ def collidingWithSprites(blocko, block):
         return False
     elif blocko._collisionStyle == block._collisionStyle == type(blocko)._circCollision:
         dist2 = (blocko.x - block.x)**2 + (blocko.y - block.y)**2
-        return dist2 < (25 + 20)**2
+        return dist2 < (45)**2
     else:
         return (not (blocko.xmin > block.xmax
             or blocko.xmax < block.xmin
