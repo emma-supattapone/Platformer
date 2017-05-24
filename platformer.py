@@ -9,7 +9,6 @@ https://github.com/HHS-IntroProgramming/Platformer
 
 from ggame import App
 myapp = App()
-#myapp.run()
 
 SCREEN_WIDTH = 600
 SCREEN_HEIGHT = 400
@@ -62,15 +61,10 @@ class blockoo(Sprite):
 def s(event):
     blockoo(((mouseposition[0]), (mouseposition[1])))
     rectangle.y = mouseposition[1]
-    
-
 
 def move(event):
     global mouseposition
     mouseposition = (event.x, event.y)
-
-
-
 
 
 #Player
@@ -108,10 +102,18 @@ def collidingWithSprites(blocko, block):
             or blocko.xmax < block.xmin
             or blocko.ymin > block.ymax
             or blocko.ymax < block.ymin))
-    
-class KeyEvent(_Event):
 
-def     
+myapp.run()    
+
+#class KeyEvent(_Event):
+global star
+star = 0
+def mup(event):
+    star = 2
+def might(event):
+    star = 3
+def meft(event):
+    star = 4
 
 global t
 t=0
@@ -124,6 +126,19 @@ def step():
         else:
             t=t+0.05
             player.y = player.y + 3 * t
+    if star == 2:
+        player.y = player.y - 60
+        star=0
+    elif star == 3:
+        player.x == player.x + 10
+        star=0
+    elif star == 4:
+        player.x == player.x - 10
+        star=0
+        
+myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
+myapp.run(step)
+
     
 myapp.listenKeyEvent('keydown' , 'w' , w)
 myapp.listenMouseEvent('mousemove', move)
@@ -139,12 +154,7 @@ myapp.listenKeyEvent('keydown' , 'left arrow' , meft)
 
 
 
-#myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
-myapp.run(step)
-#myapp.run()
-
 """
-
 smol = RectangleAsset(0.1,0.1,thinline, purple)
 #E
 Sprite(smol, (100,100))
@@ -182,5 +192,4 @@ Sprite(smol, (116,103))
 Sprite(smol, (117,104))
 Sprite(smol, (118,103))
 Sprite(smol, (119,104))
-
 """
