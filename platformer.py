@@ -57,6 +57,8 @@ class blockoo(Sprite):
     asset=RectangleAsset(15,4, thinline, red)
     def __init__(self, position):
         super(). __init__(blockoo.asset, position)
+        self.vx=1
+        self.vy=1
 
 def s(event):
     blockoo(((mouseposition[0]), (mouseposition[1])))
@@ -69,7 +71,6 @@ blockoo.go = True
 def move(event):
     global mouseposition
     mouseposition = (event.x, event.y)
-
 
 #Player
 class blocko(Sprite):
@@ -128,12 +129,11 @@ def step():
         if len(cc) > 0:
             print("pancakes")
         else:
-            print("with syrup")
             t=t+0.05
             player.y = player.y + 3 * t
     if star == 2:
+        print("with syrup")
         player.y = player.y - 60
-        print("yum")
         star=0
     elif star == 3:
         print("and blueberries")
