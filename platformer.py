@@ -124,15 +124,19 @@ def step():
         if len(cc) > 0:
             print("pancakes")
         else:
+            print("with syrup")
             t=t+0.05
             player.y = player.y + 3 * t
     if star == 2:
         player.y = player.y - 60
+        
         star=0
     elif star == 3:
+        print("and blueberries")
         player.x = player.x + 10
         star=0
     elif star == 4:
+        print("chocolate chip")
         player.x = player.x - 10
         star=0
         
