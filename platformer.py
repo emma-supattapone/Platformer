@@ -60,7 +60,11 @@ class blockoo(Sprite):
 
 def s(event):
     blockoo(((mouseposition[0]), (mouseposition[1])))
-    rectangle.y = mouseposition[1]
+    blockoo.x = mouseposition[0]
+    blockoo.y = mouseposition[1]
+    print(blockoo.y)
+    
+blockoo.go = True
 
 def move(event):
     global mouseposition
@@ -129,7 +133,7 @@ def step():
             player.y = player.y + 3 * t
     if star == 2:
         player.y = player.y - 60
-        
+        print("yum")
         star=0
     elif star == 3:
         print("and blueberries")
@@ -139,9 +143,24 @@ def step():
         print("chocolate chip")
         player.x = player.x - 10
         star=0
+myapp.run(step)
+global e
+def steep():
+    global e
+    if blockoo.go:
+        print("mooooo")
+        cc = player.collidingWithSprites(block)
+        if len(cc) > 0:
+            print("moo")
+        else:
+            print("cow")
+            e=e+0.05
+            blockoo.y = blockoo.y + 3 * e
+
         
 myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
-myapp.run(step)
+
+myapp.run(steep)
 
     
 myapp.listenKeyEvent('keydown' , 'w' , w)
