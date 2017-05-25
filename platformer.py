@@ -130,10 +130,10 @@ def step():
         player.y = player.y - 60
         star=0
     elif star == 3:
-        player.x == player.x + 10
+        player.x = player.x + 10
         star=0
     elif star == 4:
-        player.x == player.x - 10
+        player.x = player.x - 10
         star=0
         
 myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
