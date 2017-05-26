@@ -116,7 +116,7 @@ global star, yum
 star = 0
 def mup(event):
     star = 2
-    yum=100
+    yum=60
 def might(event):
     star = 3
 def meft(event):
@@ -135,13 +135,13 @@ def step():
             t=t+0.05
             player.y = player.y + 3 * t
     if star == 2:
-        print("with syrup")
-        if yum < 0:
-            print("yay")
+        if yum > 0:
+            print("with syrup")
+            t=t+2
+            player.y = player.y - 3 * t
+            yum = yum - 2
         else:
-            player.y = player.y - yum*2
-            yum = yum-0.002
-            star=0
+            yum = 60
     elif star == 3:
         print("and blueberries")
         player.x = player.x + 10
