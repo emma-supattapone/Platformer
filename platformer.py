@@ -140,8 +140,9 @@ def step():
             t=t+2
             player.y = player.y - 3 * t
             yum = yum - 2
-        else:
-            yum = 60
+#        else:
+#            yum = 60
+
     elif star == 3:
         print("and blueberries")
         player.x = player.x + 10
