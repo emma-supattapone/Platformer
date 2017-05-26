@@ -26,6 +26,7 @@ purple = Color(0xa020f0,1.0)
 thinline = LineStyle(1, black)
 notthinline = LineStyle(3, green)
 mouseposition = (0, 0)
+yum=0
 
 
 
@@ -111,10 +112,11 @@ def collidingWithSprites(blocko, block):
 myapp.run()    
 
 #class KeyEvent(_Event):
-global star
+global star, yum
 star = 0
 def mup(event):
     star = 2
+    yum=100
 def might(event):
     star = 3
 def meft(event):
@@ -123,7 +125,8 @@ def meft(event):
 global t
 t=0
 def step():
-    global t
+    global t, yum
+    yum=yum-1
     if player.go:
         cc = player.collidingWithSprites(block)
         if len(cc) > 0:
@@ -133,8 +136,12 @@ def step():
             player.y = player.y + 3 * t
     if star == 2:
         print("with syrup")
-        player.y = player.y - 60
-        star=0
+        if yum < 0:
+            print("yay")
+        else:
+            player.y = player.y - yum*2
+            yum = yum-0.002
+            star=0
     elif star == 3:
         print("and blueberries")
         player.x = player.x + 10
@@ -173,7 +180,14 @@ myapp.listenKeyEvent('keydown' , 'left arrow' , meft)
 
 
 
+"""
+problems:
+player jumping does not work
+must stop player from sinking into the walls when falling
+add gravity+spring ability to the springs
+make the sides of the walls collide with the player rather than just the tops
 
+"""
 
 
 
