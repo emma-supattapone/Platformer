@@ -1,7 +1,7 @@
 """
 platformer.py
 Author: Emma Supattapone
-Credit: Abby Feyrer
+Credit: Abby Feyrer, Mr. Dennison
 Assignment:
 Write and submit a program that implements the sandbox platformer game:
 https://github.com/HHS-IntroProgramming/Platformer
@@ -116,32 +116,34 @@ global star, yum
 star = 0
 def mup(event):
     star = 2
-    yum=60
+    tt=16
 def might(event):
     star = 3
 def meft(event):
     star = 4
 
 global t
+global tt
 t=0
 def step():
-    global t, yum
-    yum=yum-1
+    global t, tt
     if player.go:
         cc = player.collidingWithSprites(block)
         if len(cc) > 0:
             print("pancakes")
+            t=0
+        elif len(cc) == 0:
+            if star == 2:
+        if tt > -10:
+            print("with syrup")
+            player.y = player.y - 1.2**tt
+            tt=tt-1
         else:
             t=t+0.05
             player.y = player.y + 3 * t
-    if star == 2:
-        if yum > 0:
-            print("with syrup")
-            t=t+2
-            player.y = player.y - 3 * t
-            yum = yum - 2
-#        else:
-#            yum = 60
+    
+
+
 
     elif star == 3:
         print("and blueberries")
