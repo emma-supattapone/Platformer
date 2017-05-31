@@ -54,6 +54,7 @@ def move(event):
 
 
 #Spring
+sprig = []
 class blockoo(Sprite):
     asset=RectangleAsset(15,4, thinline, red)
     def __init__(self, position):
@@ -62,10 +63,12 @@ class blockoo(Sprite):
         self.vy=1
 
 def s(event):
-    blockoo(((mouseposition[0]), (mouseposition[1])))
+    sprig.append(blockoo(((mouseposition[0]), (mouseposition[1]))))
     blockoo.x = mouseposition[0]
     blockoo.y = mouseposition[1]
     print(blockoo.y)
+#    print(sprig)
+
     
 blockoo.go = True
 
