@@ -66,20 +66,20 @@ def s(event):
     sprig.append(blockoo(((mouseposition[0]), (mouseposition[1]))))
     blockoo.x = mouseposition[0]
     blockoo.y = mouseposition[1]
-    print(blockoo.y)
+#    print(blockoo.y)
 #    print(sprig)
 
-def collidingWithSprites(sprig, e):
-    if sprig is e:
+def collidingWithSprites(blockoo, block):
+    if blockoo is block:
         return False
-    elif sprig._collisionStyle == e._collisionStyle == type(sprig)._circCollision:
-        dist3 = (sprig.x - e.x)**2 + (sprig.y - e.y)**2
+    elif blockoo._collisionStyle == block._collisionStyle == type(blockoo)._circCollision:
+        dist3 = (blockoo.x - block.x)**2 + (blockoo.y - block.y)**2
         return dist3 < (45)**2
     else:
-        return (not (sprig.xmin > e.xmax
-            or sprig.xmax < e.xmin
-            or sprig.ymin > e.ymax
-            or sprig.ymax < e.ymin))
+        return (not (blockoo.xmin > block.xmax
+            or blockoo.xmax < block.xmin
+            or blockoo.ymin > block.ymax
+            or blockoo.ymax < block.ymin))
     
 blockoo.go = True
 
@@ -217,6 +217,8 @@ player jumping does not work
 must stop player from sinking into the walls when falling
 add gravity+spring ability to the springs
 make the sides of the walls collide with the player rather than just the tops
+
+is it different if it is a list?
 
 """
 
