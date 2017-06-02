@@ -69,6 +69,17 @@ def s(event):
     print(blockoo.y)
 #    print(sprig)
 
+def collidingWithSprites(sprig, e):
+    if sprig is e:
+        return False
+    elif sprig._collisionStyle == e._collisionStyle == type(sprig)._circCollision:
+        dist3 = (sprig.x - e.x)**2 + (sprig.y - e.y)**2
+        return dist3 < (45)**2
+    else:
+        return (not (sprig.xmin > e.xmax
+            or sprig.xmax < e.xmin
+            or sprig.ymin > e.ymax
+            or sprig.ymax < e.ymin))
     
 blockoo.go = True
 
@@ -124,6 +135,21 @@ def might(event):
     star = 3
 def meft(event):
     star = 4
+    
+    
+global g
+g=0
+def steppp():
+    global g
+    if blockoo.go:
+        bb = blockoo.collidingWithSprites(block)
+        if len(bb) > 0:
+            print("blueberry muffins")
+            g=0
+        else:
+            g=g+0.5
+            blockoo.y = blockoo.y + 3 * g
+myapp.run(steppp)            
 
 global t
 global tt
@@ -172,6 +198,7 @@ def steep():
 myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
 
 myapp.run(steep)
+
 
     
 myapp.listenKeyEvent('keydown' , 'w' , w)
