@@ -69,7 +69,7 @@ def s(event):
 #    print(blockoo.y)
 #    print(sprig)
 
-def collidingWithSprites(blockoo, block):
+def collidingWithSpritess(blockoo, block):
     if blockoo is block:
         return False
     elif blockoo._collisionStyle == block._collisionStyle == type(blockoo)._circCollision:
@@ -136,20 +136,6 @@ def might(event):
 def meft(event):
     star = 4
     
-    
-global g
-g=0
-def steppp():
-    global g
-    if blockoo.go:
-        bb = blockoo.collidingWithSprites(block)
-        if len(bb) > 0:
-            print("blueberry muffins")
-            g=0
-        else:
-            g=g+0.5
-            blockoo.y = blockoo.y + 3 * g
-myapp.run(steppp)            
 
 global t
 global tt
@@ -169,9 +155,6 @@ def step():
             print("with syrup")
             player.y = player.y - 1.2**tt
             tt=tt-1
-
-
-
     elif star == 3:
         print("and blueberries")
         player.x = player.x + 10
@@ -180,7 +163,8 @@ def step():
         print("chocolate chip")
         player.x = player.x - 10
         star=0
-myapp.run(step)
+
+"""
 global e
 def steep():
     global e
@@ -193,11 +177,55 @@ def steep():
             print("cow")
             e=e+0.05
             blockoo.y = blockoo.y + 3 * e
+myapp.run(steep) 
+"""
+global g
+g=0
+def steppp():
+    if blockoo.go:
+        print("yes")
+        global g
+    for x in sprig:
+        print(x)
+        global g
+        ccc = sprig.collidingWithSpritess(block)
+        if len(ccc) > 0:
+            print("aaaaa")
+            g=0
+        else:
+            print("bbbb")
+            g=g+0.05
+            x.y = x.y + 3 * g
+        
+ee = [1,2,3,4,5,6,7,8]
+for u in ee:
+    print(u)
+            
+            
+"""         
+    if star == 2:
+        if tt > -10:
+            print("with syrup")
+            e.y = e.y - 1.2**tt
+            tt=tt-1
+        
+        
+        
+    if blockoo.go:
+        bb = blockoo.collidingWithSprites(block)
+        if len(bb) > 0:
+            print("blueberry muffins")
+            g=0
+        else:
+            g=g+0.5
+            blockoo.y = blockoo.y + 3 * g
+"""
+myapp.run(steppp)            
 
         
 myapp = App(SCREEN_WIDTH, SCREEN_HEIGHT)
 
-myapp.run(steep)
+myapp.run(step)
 
 
     
@@ -210,13 +238,12 @@ myapp.listenKeyEvent('keydown' , 'right arrow' , might)
 myapp.listenKeyEvent('keydown' , 'left arrow' , meft)
 
 
-
 """
 problems:
 player jumping does not work
 must stop player from sinking into the walls when falling
 add gravity+spring ability to the springs
-make the sides of the walls collide with the player rather than just the tops
+make the sides+bottom of the walls collide with the player rather than just the tops
 
 is it different if it is a list?
 
