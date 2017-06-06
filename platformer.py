@@ -118,10 +118,10 @@ def collidingWithSprites(blocko, block):
         dist2 = (blocko.x - block.x)**2 + (blocko.y - block.y)**2
         return dist2 < (45)**2
     else:
-        return (not (blocko.xmin > block.xmax
+        return (blocko.xmin > block.xmax
             or blocko.xmax < block.xmin
             or blocko.ymin > block.ymax
-            or blocko.ymax < block.ymin))
+            or blocko.ymax < block.ymin)
 
 myapp.run()    
 
