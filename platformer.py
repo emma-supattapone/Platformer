@@ -63,9 +63,9 @@ class blockoo(Sprite):
         self.vy=1
 
 def s(event):
-    sprig.append(blockoo(((mouseposition[0]), (mouseposition[1]))))
-    blockoo.x = mouseposition[0]
-    blockoo.y = mouseposition[1]
+    sprig.append(blockoo((mouseposition[0], mouseposition[1])))
+    #blockoo.x = mouseposition[0]
+    #blockoo.y = mouseposition[1]
 #    print(blockoo.y)
 #    print(sprig)
 
@@ -186,18 +186,18 @@ def steppp():
         print("yes")
         global g
     for x in sprig:
-        print(x)
-        print("mmmm")
+        #print(x)
         global g
         ccc = x.collidingWithSprites(block)
-        print("tyjr")
         if len(ccc) > 0:
             print("aaaaa")
             g=0
         else:
             print("bbbb")
             g=g+0.05
-            x.y = x.y + 3 * g
+            #x.y = x.y + 3 * g
+            x.y = x.y + 1
+            print(x.y)
         
 
             
