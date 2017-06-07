@@ -153,7 +153,7 @@ def step():
     if star == 2:
         if tt > -10:
             print("with syrup")
-            player.y = player.y - 1.2**tt
+            player.y = player.y - 1.4**tt
             tt=tt-1
     elif star == 3:
         print("and blueberries")
@@ -187,8 +187,10 @@ def steppp():
         global g
     for x in sprig:
         print(x)
+        print("mmmm")
         global g
-        ccc = sprig.collidingWithSpritess(block)
+        ccc = x.collidingWithSprites(block)
+        print("tyjr")
         if len(ccc) > 0:
             print("aaaaa")
             g=0
@@ -197,10 +199,7 @@ def steppp():
             g=g+0.05
             x.y = x.y + 3 * g
         
-ee = [1,2,3,4,5,6,7,8]
-for u in ee:
-    print(u)
-            
+
             
 """         
     if star == 2:
