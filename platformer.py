@@ -196,7 +196,9 @@ def steppp():
             x.y = x.y + 3 * x.g
             #x.y = x.y + 1
             print(x.y)
-        
+            if x.y >= 800:
+                sprig.remove(x)
+
 
             
 """         
