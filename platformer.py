@@ -154,7 +154,7 @@ def step():
     if star == 2:
         if tt > -10:
             print("with syrup")
-            player.y = player.y - 1.4**tt
+            player.y = player.y - 1.2**tt
             tt=tt-1
     elif star == 3:
         print("and blueberries")
