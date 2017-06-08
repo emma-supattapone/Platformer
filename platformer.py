@@ -145,9 +145,13 @@ def step():
     global t, tt
     if player.go:
         cc = player.collidingWithSprites(block)
+        print(len(cc))
         if len(cc) > 0:
             print("pancakes")
             t=0
+        elif len(cc) < 0:
+            print("NOOOO")
+            player.y = player.y + len(cc)
         else:
             t=t+0.05
             player.y = player.y + 3 * t
@@ -156,7 +160,7 @@ def step():
             print("with syrup")
             player.y = player.y - 1.2**tt
             tt=tt-1
-    elif star == 3:
+    if star == 3:
         print("and blueberries")
         player.x = player.x + 10
         star=0
@@ -164,61 +168,38 @@ def step():
         print("chocolate chip")
         player.x = player.x - 10
         star=0
-
 """
-global e
-def steep():
-    global e
-    if blockoo.go:
-        print("mooooo")
-        cc = player.collidingWithSprites(block)
-        if len(cc) > 0:
-            print("moo")
-        else:
-            print("cow")
-            e=e+0.05
-            blockoo.y = blockoo.y + 3 * e
-myapp.run(steep) 
+cccc = player.collidingWithSprites(sprig)
+    if len(cccc) > 0:
+            print("hiiiiiiiiiiiiiiiiiiiiiii")
 """
 def steppp():
     if blockoo.go:
-        print("yes")
-    for x in sprig:
-        #print(x)
+        for x in sprig:
+            #print(x)
+            ccc = x.collidingWithSprites(block)
+            if len(ccc) > 0:
+                x.g=0
+            else:
+                x.g=x.g+0.05
+                x.y = x.y + 3 * x.g
+                #print(x.y)
+                if x.y >= 800:
+                    sprig.remove(x)
 
-        ccc = x.collidingWithSprites(block)
-        if len(ccc) > 0:
-            print("aaaaa")
-            x.g=0
-        else:
-            print("bbbb")
-            x.g=x.g+0.05
-            x.y = x.y + 3 * x.g
-            #x.y = x.y + 1
-            print(x.y)
-            if x.y >= 800:
-                sprig.remove(x)
-
-
-            
-"""         
-    if star == 2:
-        if tt > -10:
-            print("with syrup")
-            e.y = e.y - 1.2**tt
-            tt=tt-1
+"""
+ 
+def stepppp():
+    if player.go:
         
-        
-        
-    if blockoo.go:
-        bb = blockoo.collidingWithSprites(block)
-        if len(bb) > 0:
-            print("blueberry muffins")
             g=0
         else:
             g=g+0.5
             blockoo.y = blockoo.y + 3 * g
-"""
+"""           
+            
+            
+
 myapp.run(steppp)            
 
         
