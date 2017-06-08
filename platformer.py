@@ -220,9 +220,9 @@ myapp.listenKeyEvent('keydown' , 'left arrow' , meft)
 
 """
 problems:
-player jumping does not work
+
 must stop player from sinking into the walls when falling
-add gravity+spring ability to the springs
+add spring ability to the springs
 make the sides+bottom of the walls collide with the player rather than just the tops
 
 is it different if it is a list?
